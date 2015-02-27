@@ -1,0 +1,26 @@
+<link rel="import" href="../../../bower_components/polymer/polymer.html">
+
+<polymer-element name="people-card" noscript attributes="name url avatar">
+	<template>
+		<style>
+		:host {
+			display: block;
+			border: solid 1px #ddd;
+			margin-top: 10px;
+			padding: 10px;
+			background-color: white;
+		}
+
+		:host .people-name {
+			text-decoration: none;
+			color: black;
+		}
+		</style>
+		<div horizontal layout>
+			<h2 flex>
+				<a class="people-name" href="{{url}}">{{name}}</a>
+			</h2>
+			<img width="70" height="70" src="{{avatar}}" />
+		</div>
+	</template>
+</polymer-element>

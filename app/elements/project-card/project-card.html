@@ -1,0 +1,57 @@
+<link rel="import" href="../../../bower_components/polymer/polymer.html">
+
+<polymer-element name="project-card" attributes="name url description">
+	<template>
+		<style>
+		:host {
+			display: block;
+			border: solid 1px #ddd;
+			margin-top: 10px;
+			padding: 10px;
+			background-color: white;
+		}
+
+		:host .project-name {
+			text-decoration: none;
+			color: {{isPolymer ? 'red' : 'black'}};
+		}
+
+		:host .project-desc {
+			color: #888;
+		}
+		</style>
+		<h2>
+			<a class="project-name" href="{{url}}">{{name}}</a>
+		</h2>
+		<p class="project-desc">{{description}}</p>
+	</template>
+	<script>
+	Polymer('project-card', {
+		isPolymer: false,
+
+		// Appel à la création de l'élément
+		created: function() {},
+
+		// Appel quand les enfants et les voisins de cet élément dans le DOM existent
+		domReady: function() {},
+
+		// Appel quand ce composant polymer est prêt
+		ready: function() {},
+
+		// Appel quand cet élément a été inséré dans le DOM
+		attached: function() {},
+
+		// Appel quand cet élément a été retiré du DOM
+		detached: function() {},
+
+		// Appel quand un attribut a été ajouté, retiré, modifié
+		attributeChanged: function(attr, oldVal, newVal) {},
+
+		nameChanged: function(oldValue, newValue) {
+			if (newValue === 'polymer') {
+				this.isPolymer = true;
+			}
+		}
+	});
+	</script>
+</polymer-element>
